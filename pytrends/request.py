@@ -312,11 +312,11 @@ class TrendReq(object):
             result_dict[kw] = {'top': top_df, 'rising': rising_df}
         return result_dict
 
-    def trending_searches(self, pn='p1'):
+    def trending_searches(self, pn='p23', htd=''):
         """Request data from Google's Trending Searches section and return a dataframe"""
 
         # make the request
-        forms = {'ajax': 1, 'pn': pn, 'htd': '', 'htv': 'l'}
+        forms = {'ajax': 1, 'pn': pn, 'htd': htd, 'htv': 'l'}
         req_json = self._get_data(
             url=TrendReq.TRENDING_SEARCHES_URL,
             method=TrendReq.POST_METHOD,
